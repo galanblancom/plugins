@@ -164,7 +164,7 @@ final class GoogleMapController
             info.setOrientation(LinearLayout.VERTICAL);
 
             TextView title = new TextView(context);
-            //title.setTextColor(Color.BLACK);
+            title.setTextColor(Color.BLACK);
             title.setGravity(Gravity.CENTER);
             //title.setTypeface(null, Typeface.BOLD);
             //title.setText(marker.getTitle());
@@ -175,7 +175,7 @@ final class GoogleMapController
             }
 
             TextView snippet = new TextView(context);
-            //snippet.setTextColor(Color.GRAY);
+            snippet.setTextColor(Color.GRAY);
             //snippet.setText(marker.getSnippet());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
