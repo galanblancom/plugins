@@ -163,18 +163,18 @@ final class GoogleMapController
             info.setOrientation(LinearLayout.VERTICAL);
 
             TextView title = new TextView(context);
-            title.setTextColor(Color.BLACK);
+            //title.setTextColor(Color.BLACK);
             title.setGravity(Gravity.CENTER);
-            title.setTypeface(null, Typeface.BOLD);
+            //title.setTypeface(null, Typeface.BOLD);
             //title.setText(marker.getTitle());
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-              snippet.setText(Html.fromHtml(marker.getTitle(), Html.FROM_HTML_MODE_COMPACT));
+              title.setText(Html.fromHtml(marker.getTitle(), Html.FROM_HTML_MODE_COMPACT));
             } else {
-              snippet.setText(Html.fromHtml(marker.getTitle()));
+              title.setText(Html.fromHtml(marker.getTitle()));
             }
 
             TextView snippet = new TextView(context);
-            snippet.setTextColor(Color.GRAY);
+            //snippet.setTextColor(Color.GRAY);
             //snippet.setText(marker.getSnippet());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
