@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.text.Html;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -165,11 +166,22 @@ final class GoogleMapController
             title.setTextColor(Color.BLACK);
             title.setGravity(Gravity.CENTER);
             title.setTypeface(null, Typeface.BOLD);
-            title.setText(marker.getTitle());
+            //title.setText(marker.getTitle());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+              snippet.setText(Html.fromHtml(marker.getTitle(), Html.FROM_HTML_MODE_COMPACT));
+            } else {
+              snippet.setText(Html.fromHtml(marker.getTitle()));
+            }
 
             TextView snippet = new TextView(context);
             snippet.setTextColor(Color.GRAY);
-            snippet.setText(marker.getSnippet());
+            //snippet.setText(marker.getSnippet());
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+              snippet.setText(Html.fromHtml(marker.getSnippet(), Html.FROM_HTML_MODE_COMPACT));
+            } else {
+              snippet.setText(Html.fromHtml(marker.getSnippet()));
+            }
 
             info.addView(title);
             info.addView(snippet);
